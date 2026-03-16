@@ -1,0 +1,12 @@
+{
+    "Herb": {
+        "name" : "Herb",
+        "type" : "Plant",
+        "quality" : "common",
+        "sellValue" : "1",
+        "effect" : "HEAL",
+        "effectDesc" : "It tastes like grass but honeslty not too bad",
+        "amount" : "5",
+        "desc" : ""
+    }
+}
