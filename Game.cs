@@ -20,16 +20,30 @@ namespace FinalProject
             _player = new Player(CreateWorld());
         }
 
-        // This creates a very simple world based 
-        // on the landscape of Columbus State University
         public Room CreateWorld()
         {
             Room town = new Room("in the town square.", "standing");
             Room alchemyStore = new Room("your very own alchemy store");
-            Room forest = new Room("a large dense forest");
 
+            Room forest = new Room("the entrance to the forest, theres a beaten path that trails North. There is a fallen tree that seems to have fallen over either to old age or from a storm, it looks like its been there a while");
+            Room FfallenTree = new Room("Its a fallen tree surrounded by overgrowth. Its quite large but it looks to have been here quite a while. It looks like a good spot for mushrooms to grow.")
+            FfallenTree.SetExit("Back to the trail" forest);
+
+            Room FCrossroad = new Room("It seems the trail diverges into two paths , one goes to the left and one to the right");
+
+            FCrossroad.SetExit("Left Path", FLeftPath);
+
+
+            Room FRightPath = new Room();
+            Room FLeftPath = new Room();
+
+            forest.SetExit("North", );
+            forest.SetExit("Fallen Tree", FfallenTree);
+            
+
+
+            town.SetExit("Forest", forest)
             town.SetExit("alchemyStore",alchemyStore);
-            town.SetExit("Forest",forest);
 
             alchemyStore.SetExit("Town",town);
 

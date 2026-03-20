@@ -1,12 +1,13 @@
 {
-    "Herb": {
-        "name" : "Herb",
+    "WildFingleBush": {
+        "name" : "Wild Fingle Bush",
         "type" : "Plant",
         "quality" : "common",
         "sellValue" : "1",
         "effect" : "HEAL",
-        "effectDesc" : "It tastes like grass but honeslty not too bad",
-        "amount" : "5",
-        "desc" : ""
+        "effectDesc" : "It tastes like spinich but honeslty not too bad, you gain 1 HP",
+        "amount" : "1",
+        "desc" : " A small plant with large green leaves, the leaves are triangular and connected to a small twig as a base.  ",
+        "isBoiled" : " the water slowly turns a redish hue as you boiled the plant, after fully steeping the liquid is slight red. It doesnt look very strong."
     }
 }
