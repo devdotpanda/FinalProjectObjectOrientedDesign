@@ -35,8 +35,17 @@ namespace FinalProject
 
 
             Room FRightPath = new Room();
-            Room FLeftPath = new Room();
 
+
+            Room Pond = new Room("A large pond, you can see its populated with lots of fish and lots of shrubery");
+            Room PFishingDock = new Room("A fishing dock, its well worn");
+            Pond.SetExit("Fishing Dock", PFishingDock);
+            Pond.SetExit("go Back" , FLeftPath);
+            PFishingDock.SetExit("go back", Pond);
+            Room FLeftPath = new Room("After a while of walking you notice you come up to a pond its of to the side of the path but the path continues on past and around the pond");
+            FLeftPath.SetExit("Pond", Pond);
+            FLeftPath.SetExit("Deep Forest" DeepForest);
+            FLeftPath.SetExit("go back", FCrossroad);
             forest.SetExit("North", );
             forest.SetExit("Fallen Tree", FfallenTree);
             
