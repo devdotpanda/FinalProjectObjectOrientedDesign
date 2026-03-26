@@ -28,7 +28,7 @@ namespace FinalProject
             }
             else
             {
-                player.InfoMessage("\nYou are lost. You are alone. You wander around the university, \n\nYour available commands are " + _words.Description());
+                player.InfoMessage("\n Go and explore the world!!\n Try to harvest as many plants as you can! \n\nYour available commands are " + _words.Description());
             }
             return false;
         }

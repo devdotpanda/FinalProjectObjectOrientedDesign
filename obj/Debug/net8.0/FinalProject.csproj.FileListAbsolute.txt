@@ -12,3 +12,4 @@
 /home/panda/Documents/repos/OOP/FinalProject/obj/Debug/net8.0/FinalProject.pdb
 /home/panda/Documents/repos/OOP/FinalProject/obj/Debug/net8.0/FinalProject.genruntimeconfig.cache
 /home/panda/Documents/repos/OOP/FinalProject/obj/Debug/net8.0/ref/FinalProject.dll
+/home/panda/Documents/repos/OOP/FinalProject/obj/Debug/net8.0/FinalProject.sourcelink.json

@@ -16,6 +16,7 @@ namespace FinalProject
         public string Name { get { return _name; } set { _name = value; } }
         private string _secondWord;
         public string SecondWord { get { return _secondWord; } set { _secondWord = value; } }
+        //public string desc;
 
         public Command()
         {
