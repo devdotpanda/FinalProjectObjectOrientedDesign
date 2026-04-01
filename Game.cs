@@ -18,7 +18,9 @@ namespace FinalProject
             _playing = false;
             _parser = new Parser(new CommandWords());
             _player = new Player(CreateWorld());
+            GameDataManager gameData = new GameDataManager();
         }
+
 
         public Room CreateWorld()
         {
