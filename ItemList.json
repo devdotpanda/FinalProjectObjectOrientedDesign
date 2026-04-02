@@ -1,67 +1,57 @@
-{
-    "WildFingleBush": {
-        "name" : "Wild Fingle Bush",
-        "type" : "Plant",
-        "quality" : "common",
-        "sellValue" : 1,
-        "effect" : "HEAL",
-        "effectDesc" : "It tastes like spinich but honeslty not too bad, you gain 1 HP",
-        "amount" : 1,
-        "desc" : " A small plant with large green leaves, the leaves are triangular and connected to a small twig as a base.  ",
-        "isBoiled" : " the water slowly turns a redish hue as you boiled the plant, after fully steeping the liquid is slight red. It doesnt look very strong."
-    },
-
-    "Iris_Versicolor" : { 
-        "name" : "Iris Versicolor",
-        "type" : "Flower",
-        "quality" : "common",
-        "sellValue" : 2,
-        "effect" : "POISON",
-        "effectDesc" : "It tastes very pungent bitter and terrible. Leaves a burning aftertaste, You are now POISONED",
-        "amount" : 0,
-        "desc" : "A light purple flower with long thin petals ",
-        "isBoiled" : " causes severe gastrointestinal distress, including vomiting, diarrhea, intense abdominal pain, and nausea"
-    },
-
-    "Lions_Mane" :{ 
-        "name" : "Lion's Mane",
-        "type" : "Mushroom",
-        "quality" : "common",
-        "sellValue" : "3",
-        "effect" : "NONE",
-        "effectDesc" : "It tastes bland with a earthy undertone",
-        "amount" : 0,
-        "desc" : " commonly known as lion's mane, yamabushitake, bearded tooth fungus, or bearded hedgehog, is a species of tooth fungus. It tends to grow in a single clump with dangling spines longer than 1 centimetre",
-        "isBoiled" : "The water turns a murky white color"
-    },
-
-
-    "Water_Lily" : {
-        "name" : "Water Lily",
-        "type" : "Flower",
-        "location" : "POND",
-        "quality" : "common",
-        "effect" : "NONE",
-        "effectDesc" : "It tastes mildly sweet with an earth tone similar to beans",
-        "amount" : 0,
-        "desc" : "A pink or purple large flower that rests on the waters surface. ",
-        "isBoiled" : "the water turns a yellowish tint, a caffine free tea from dried lily flowers. Has a delicate floral and slightly sweet taste. Calms nerves, reduces anxiety and used a sleep aid"
-    },
-
-
-    "Hornwart" : {
-        "name" : "Hortwart",
-        "type" : "Plant",
-        "location" : "POND",
-        "quality" : "common",
-        "effect" : "NONE",
-        "effectDesc" : "",
-        "amount" : 0,
-        "desc" : " has fluffy, filamentous bright green leaves. The stems can recover quickly, growing new leasves within a few weeks.",
-        "isBoiled" : "No change"
-    }
-
-
-
-}
-
+[
+  {
+    "name": "Wild Fingle Bush",
+    "type": "Plant",
+    "quality": "common",
+    "sellValue": 1,
+    "effect": "HEAL",
+    "effectDesc": "It tastes like spinich but honeslty not too bad, you gain 1 HP",
+    "amount": 1,
+    "desc": "A small plant with large green leaves, the leaves are triangular and connected to a small twig as a base.",
+    "isBoiledDesc": "The water slowly turns a reddish hue as you boiled the plant, after fully steeping the liquid is slight red. It doesn't look very strong."
+  },
+  {
+    "name": "Iris Versicolor",
+    "type": "Flower",
+    "quality": "common",
+    "sellValue": 2,
+    "effect": "POISON",
+    "effectDesc": "It tastes very pungent bitter and terrible. Leaves a burning aftertaste, you are now POISONED",
+    "amount": 0,
+    "desc": "A light purple flower with long thin petals",
+    "isBoiledDesc": "Causes severe gastrointestinal distress, including vomiting, diarrhea, intense abdominal pain, and nausea"
+  },
+  {
+    "name": "Lion's Mane",
+    "type": "Mushroom",
+    "quality": "common",
+    "sellValue": 3,
+    "effect": "NONE",
+    "effectDesc": "It tastes bland with an earthy undertone",
+    "amount": 0,
+    "desc": "Commonly known as lion's mane, yamabushitake, bearded tooth fungus, or bearded hedgehog. It grows in a clump with dangling spines longer than 1 cm.",
+    "isBoiledDesc": "The water turns a murky white color"
+  },
+  {
+    "name": "Water Lily",
+    "type": "Flower",
+    "location": "POND",
+    "quality": "common",
+    "effect": "NONE",
+    "effectDesc": "It tastes mildly sweet with an earth tone similar to beans",
+    "amount": 0,
+    "desc": "A pink or purple large flower that rests on the water's surface.",
+    "isBoiledDesc": "The water turns a yellowish tint. A caffeine-free tea with a delicate floral and slightly sweet taste. Calms nerves and reduces anxiety."
+  },
+  {
+    "name": "Hornwart",
+    "type": "Plant",
+    "location": "POND",
+    "quality": "common",
+    "effect": "NONE",
+    "effectDesc": "",
+    "amount": 0,
+    "desc": "Has fluffy, filamentous bright green leaves. The stems recover quickly and regrow leaves within weeks.",
+    "isBoiledDesc": "No change"
+  }
+]

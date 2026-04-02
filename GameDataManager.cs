@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 namespace FinalProject { 
     public class GameDataManager{
         private string _plantList;
-        private var _playerStats;
+        private String _playerStats;
         private string _playerInventory;
 
         private string _playerStatsDir;

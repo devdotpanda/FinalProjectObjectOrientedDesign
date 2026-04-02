@@ -1,5 +1,5 @@
 ﻿using System;
-
+using Newtonsoft.Json;
 namespace FinalProject
 {
     /*
@@ -15,9 +15,12 @@ namespace FinalProject
             //game.Play();
             //game.End();
 
-            GameDataManager data = new GameDataManager();
-            List<Plants> plants = data.ReadAndParseGameData();
-            Console.WriteLine(plants);
+            using StreamReader reader = new("ItemList.json");
+            var json = reader.ReadToEnd();
+            var Plants = JsonConvert.DeserializeObject<List<Plant>>(json);
+            foreach (var item in Plants){
+                Console.WriteLine(item.toString());
+            } 
         }
     }
 }
