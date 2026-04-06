@@ -10,20 +10,26 @@ namespace FinalProject {
         private string _playerStatsDir;
         private string _playerInventoryDir;
         private readonly string _plantListDir;
+        
+        public List<Plant> PlantList;
+        public int[] PlayerStats;
+
+
 
 
         public GameDataManager(){
             _playerStatsDir = "PlayerStats.json";
             _playerInventoryDir = "PlayerInventory.csv";
             _plantListDir = "ItemList.json";
-        }
 
-        public List<Plant> ReadAndParseGameData(){
-            using StreamReader reader = new(_plantListDir);
-            var json = reader.ReadToEnd();
-            var Plants = JsonConvert.DeserializeObject<List<Plant>>(json);
-            
-            return Plants;
+            using StreamReader PlantReader = new(_plantListDir);
+            var json = PlantReader.ReadToEnd();
+            var List = JsonConvert.DeserializeObject<List<Plant>>(json);
+            PlantList = List;
+
+            using StreamReader StatReader = new(_playerStats);
+            var text = StatReader.ReadToEnd();
+            Console.WriteLine(text);
         }
 
 

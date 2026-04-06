@@ -1,0 +1,23 @@
+
+[
+    {
+        "name" : "Constitution",
+        "value" : "1",
+        "desc" : "A high constitution stat decreases the effectiveness of potions and poisions"
+    },
+    {
+        "name" : "Perception",
+        "amount" : "0",
+        "desc" : "A high perception stat allows you to get more information from researching, harvesting and allows you to find more plants"
+    },
+    {
+        "name" : "Luck",
+        "amount" : "0",
+        "desc" : "A high Luck stat allows you to find rarer items more often"
+    },
+    {
+        "name" : "Dexterity",
+        "amount" : "0",
+        "desc" : "A high dexterity stat increases the quality of crafted items"
+    }
+]
