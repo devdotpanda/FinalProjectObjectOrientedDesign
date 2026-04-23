@@ -3,35 +3,42 @@ using Newtonsoft.Json;
 
 namespace FinalProject { 
     public class GameDataManager{
-        private string _plantList;
-        private String _playerStats;
-        private string _playerInventory;
-
+        
         private string _playerStatsDir;
         private string _playerInventoryDir;
         private readonly string _plantListDir;
         
-        public List<Plant> PlantList;
-        public int[] PlayerStats;
+        private List<Plant> _plantList;
+        private int[] _playerStats;
 
 
 
 
         public GameDataManager(){
-            _playerStatsDir = "PlayerStats.json";
+            _playerStatsDir = "PlayerStats.txt";
             _playerInventoryDir = "PlayerInventory.csv";
             _plantListDir = "ItemList.json";
 
             using StreamReader PlantReader = new(_plantListDir);
             var json = PlantReader.ReadToEnd();
             var List = JsonConvert.DeserializeObject<List<Plant>>(json);
-            PlantList = List;
+            _plantList = List;
 
-            using StreamReader StatReader = new(_playerStats);
+            using StreamReader StatReader = new(_playerStatsDir);
             var text = StatReader.ReadToEnd();
-            Console.WriteLine(text);
         }
 
+        public List<Plant> PlantList{
+            get{
+                return _plantList;
+            }
+        }
+
+        public int[] PlayerStats{
+            get{
+                return _playerStats;
+            }
+        }
 
     }
 }

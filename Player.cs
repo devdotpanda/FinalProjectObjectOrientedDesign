@@ -13,14 +13,16 @@ namespace FinalProject
     public class Player
     {
         private Room _currentRoom = null;
+        private int[] playerStats;
         public Room CurrentRoom { get { return _currentRoom; } set { _currentRoom = value; } }
 
-        public Player(Room room)
+        public Player(Room room, int[] stats)
         {
             _currentRoom = room;
+            playerStats = stats;
         }
 
-        public void WaltTo(string direction)
+        public void WalkTo(string direction)
         {
             Room nextRoom = CurrentRoom.GetExit(direction);
             if (nextRoom != null)
@@ -33,6 +35,11 @@ namespace FinalProject
                 ErrorMessage("\nThere is no door on " + direction);
             }
         }
+
+        public void Examine(){
+            CurrentRoom.GeneratePlants();
+        }
+
 
         public void OutputMessage(string message)
         {

@@ -35,6 +35,31 @@ namespace FinalProject
             }
         }
 
+         public Plant[] GeneratePlants(int CurrentPerceptionLevel, GameDataManager gameData){
+            
+            int ceiling = (int)Math.Round(Math.Log(CurrentPerceptionLevel) * 10, MidpointRounding.ToEven);
+            int floor = (int)Math.Round((2 * Math.Log(CurrentPerceptionLevel)) - 1, MidpointRounding.ToEven); 
+            Random rand = new Random();
+            int randNum = rand.Next(floor, ceiling + 1 );
+            Plant[] output = new Plant[randNum];
+            Console.WriteLine("You have Found " + randNum + " plants ");
+            //GameDataManager fetch me $randNum amount of plants please from LOCATION 
+            //create new list that contains only plants from LOCATION
+            List<Plant> PlantsFromLocation = new List<Plant>();
+            for(int i = 0; i > gameData.PlantList.Count; i++){
+                if(Enum.TryParse(gameData.PlantList[i].Location, out RoomType plantLocation))
+                if(plantLocation == _player.CurrentRoom.GetRoomType()){
+                    PlantsFromLocation.Add(gameData.PlantList[i]);
+                    Console.WriteLine(PlantsFromLocation);
+                }
+            }
+            for(int i =0; i > randNum; i++){
+                int randPlant = rand.Next(0,PlantsFromLocation.Count);
+                output[i] = PlantsFromLocation[randPlant];
+            }
+            return output;
+        }
+
         public void SetExit(string exitName, Room room)
         {
             _exits[exitName] = room;
