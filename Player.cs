@@ -36,8 +36,20 @@ namespace FinalProject
             }
         }
 
-        public void Examine(){
-            CurrentRoom.GeneratePlants();
+        public void ExamineRoom(){
+            List<Plant> generatedPlants = CurrentRoom.GeneratePlants(2);
+            if(generatedPlants != null){
+                    Console.WriteLine("~~~YOU HAVE FOUND " + generatedPlants.Count + " PLANTS~~~");
+                Console.WriteLine("______________________________");
+                for(int i = 0; i < generatedPlants.Count; i++){
+                    Console.WriteLine(" |  " + generatedPlants[i].Name + " \t| ");
+                }
+                Console.WriteLine("______________________________");
+            }else{
+                Console.WriteLine("~~~YOU HAVE FOUND~~~\n\n Nothing....");
+            }
+            
+            
         }
 
 

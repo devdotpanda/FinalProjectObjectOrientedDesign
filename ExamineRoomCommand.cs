@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace FinalProject{
 
-    public class ExamineRoom : Command{
+    public class ExamineRoomCommand : Command{
 
         public ExamineRoomCommand() : base(){
             this.Name = "examine";
@@ -11,9 +11,8 @@ namespace FinalProject{
 
         override
         public bool Execute(Player player){
-            bool answer = true;
-            player.Examine();
-            return answer;
+            player.ExamineRoom();
+            return false;
         }
     }
 }

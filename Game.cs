@@ -20,8 +20,7 @@ namespace FinalProject
         {
             _playing = false;
             var World = GameWorld.Instance();
-            var NotifCenter = NotificationCenter.Instance;
-            gameData = new GameDataManager();
+            gameData = GameDataManager.Instance();
             _parser = new Parser(new CommandWords());
             _player = new Player(World.CreateWorld(), gameData.PlayerStats);
             

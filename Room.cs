@@ -14,6 +14,7 @@ namespace FinalProject
     public class Room
     {
         private Dictionary<string, Room> _exits;
+        private ItemGenerator itemGen; 
         private string _tag;
         private string _conjunction;
         private RoomType roomType;
@@ -30,34 +31,14 @@ namespace FinalProject
             _exits = new Dictionary<string, Room>();
             Tag = tag;
             Conjunction = conjunction;
+            itemGen = new ItemGenerator();
             if(Enum.TryParse(type, out RoomType output)){
                 roomType = output;
             }
         }
 
-         public Plant[] GeneratePlants(int CurrentPerceptionLevel, GameDataManager gameData){
-            
-            int ceiling = (int)Math.Round(Math.Log(CurrentPerceptionLevel) * 10, MidpointRounding.ToEven);
-            int floor = (int)Math.Round((2 * Math.Log(CurrentPerceptionLevel)) - 1, MidpointRounding.ToEven); 
-            Random rand = new Random();
-            int randNum = rand.Next(floor, ceiling + 1 );
-            Plant[] output = new Plant[randNum];
-            Console.WriteLine("You have Found " + randNum + " plants ");
-            //GameDataManager fetch me $randNum amount of plants please from LOCATION 
-            //create new list that contains only plants from LOCATION
-            List<Plant> PlantsFromLocation = new List<Plant>();
-            for(int i = 0; i > gameData.PlantList.Count; i++){
-                if(Enum.TryParse(gameData.PlantList[i].Location, out RoomType plantLocation))
-                if(plantLocation == _player.CurrentRoom.GetRoomType()){
-                    PlantsFromLocation.Add(gameData.PlantList[i]);
-                    Console.WriteLine(PlantsFromLocation);
-                }
-            }
-            for(int i =0; i > randNum; i++){
-                int randPlant = rand.Next(0,PlantsFromLocation.Count);
-                output[i] = PlantsFromLocation[randPlant];
-            }
-            return output;
+        public List<Plant> GeneratePlants(int PlayerStat){
+            return itemGen.Plants(PlayerStat, this.roomType);
         }
 
         public void SetExit(string exitName, Room room)

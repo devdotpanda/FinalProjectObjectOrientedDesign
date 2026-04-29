@@ -4,12 +4,26 @@ using Newtonsoft.Json;
 namespace FinalProject { 
     public class GameDataManager{
         
+        private static GameDataManager _instance;
+        private static readonly object _lock = new object();
+
         private string _playerStatsDir;
         private string _playerInventoryDir;
-        private readonly string _plantListDir;
+        private string _plantListDir;
         
         private List<Plant> _plantList;
         private int[] _playerStats;
+
+        public static GameDataManager Instance(){
+            if(_instance == null){
+                lock (_lock){
+                    if(_instance == null){
+                        _instance = new GameDataManager();
+                    }
+                }
+            }
+            return _instance;
+        }
 
 
 
