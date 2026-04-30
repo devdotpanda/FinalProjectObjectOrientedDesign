@@ -15,6 +15,7 @@ namespace FinalProject
     {
         private Dictionary<string, Room> _exits;
         private ItemGenerator itemGen; 
+        private List<Plant> _plantsInRoom;
         private string _tag;
         private string _conjunction;
         private RoomType roomType;
@@ -38,7 +39,10 @@ namespace FinalProject
         }
 
         public List<Plant> GeneratePlants(int PlayerStat){
-            return itemGen.Plants(PlayerStat, this.roomType);
+            if(_plantsInRoom == null){
+                _plantsInRoom = itemGen.Plants(PlayerStat, this.roomType);
+            }
+            return _plantsInRoom;
         }
 
         public void SetExit(string exitName, Room room)
@@ -57,6 +61,16 @@ namespace FinalProject
             return roomType;
         }
 
+        public Plant HarvestPlant(int index){
+            Plant output = null;
+            if(index <= _plantsInRoom.Count){
+                output = _plantsInRoom[index];
+                _plantsInRoom.RemoveAt(index);
+                return output;
+            }else{
+                return output;
+            }
+        }
 
         public string GetExits()
         {

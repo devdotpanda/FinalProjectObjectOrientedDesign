@@ -13,7 +13,7 @@ namespace FinalProject
     public class CommandWords
     {
         private Dictionary<string, Command> _commands;
-        private static Command[] _commandArray = { new GoCommand(), new QuitCommand(),  new ExamineRoomCommand()};
+        private static Command[] _commandArray = { new GoCommand(), new QuitCommand(),new HarvestCommand(),new ViewInventoryCommand(),  new ExamineRoomCommand()};
 
         public CommandWords() : this(_commandArray) {}
 

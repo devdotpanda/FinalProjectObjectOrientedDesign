@@ -21,7 +21,6 @@ namespace FinalProject{
             Random rand = new Random();
             int randNum = rand.Next(floor, ceiling + 1 );
             List<Plant> output = new List<Plant>();
-            Console.WriteLine("You have Found " + randNum + " plants ");
             //_gameDataManager fetch me $randNum amount of plants please from LOCATION 
             //create new list that contains only plants from LOCATION
             List<Plant> PlantsFromLocation = new List<Plant>();

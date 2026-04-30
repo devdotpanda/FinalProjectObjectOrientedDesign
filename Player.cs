@@ -14,12 +14,14 @@ namespace FinalProject
     {
         private Room _currentRoom = null;
         private int[] playerStats;
+        private List<IItem> inventory;
         public Room CurrentRoom { get { return _currentRoom; } set { _currentRoom = value; } }
 
         public Player(Room room, int[] stats)
         {
             _currentRoom = room;
             playerStats = stats;
+            inventory = new List<IItem>();
         }
 
         public void WalkTo(string direction)
@@ -42,7 +44,7 @@ namespace FinalProject
                     Console.WriteLine("~~~YOU HAVE FOUND " + generatedPlants.Count + " PLANTS~~~");
                 Console.WriteLine("______________________________");
                 for(int i = 0; i < generatedPlants.Count; i++){
-                    Console.WriteLine(" |  " + generatedPlants[i].Name + " \t| ");
+                    Console.WriteLine(" | " + i + "." + generatedPlants[i].Name + " \t| ");
                 }
                 Console.WriteLine("______________________________");
             }else{
@@ -52,6 +54,24 @@ namespace FinalProject
             
         }
 
+        public void Harvest(int index){
+            Plant harvestedPlant = CurrentRoom.HarvestPlant(index);
+            if(harvestedPlant == null){
+                Console.WriteLine("Please enter a valid index");
+            }else{
+                Console.WriteLine("You collected 1 : " + harvestedPlant.Name );
+                inventory.Add(harvestedPlant);
+            }
+        }
+
+        public void ListInventory(){
+             Console.WriteLine("  ~~~~INVENTORY~~~~");
+            foreach(IItem item in inventory){
+                Console.WriteLine("| "+item.Name + " x" + item.Amount + "\t|");
+            }
+            Console.WriteLine("______________________________");
+
+        }
 
         public void OutputMessage(string message)
         {

@@ -1,7 +1,7 @@
 using System;
 
 namespace FinalProject{
-    public class Plant{
+    public class Plant : IItem{
         private string _name;
         private string _type;
         private string _location;
@@ -11,10 +11,16 @@ namespace FinalProject{
         private int _amount;
         private string _description;
         private string _isBoiledDesc;
+        private int _sellValue;
 
         public string Name{
             get{return _name;}
             set{_name = value;}
+        }
+
+        public int Amount{
+            get{return _amount;}
+            set{_amount = value;}
         }
 
         public string Type{
@@ -37,6 +43,17 @@ namespace FinalProject{
             set{_description = value;}
         }
 
+        /*public IEffect Effect{
+            get{return _effect;}
+        }
+
+        public String EffectDesc{
+            get{return _effectDesc;}
+        }*/
+
+        public int SellValue{
+            get{return _sellValue;}
+        }
 
         public string toString(){
             return "\n~~~ "+_name+" ~~~ \n"+_type+"\n"+_location+"\n"+_quality+"\n"+_description+"\n";
