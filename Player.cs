@@ -56,11 +56,11 @@ namespace FinalProject
 
         public void Harvest(int index){
             if(index == -1){
-                List<Plant> plantsInRoom = CurrentRoom.GeneratePlants(2);
-                for(int i = 0; i < plantsInRoom.Count;i++){
-                    Plant harvestedPlant = CurrentRoom.HarvestPlant(0);
+                Plant harvestedPlant = CurrentRoom.HarvestPlant(0);
+                while(harvestedPlant != null){
                     Console.WriteLine("You collected 1 : " + harvestedPlant.Name );
                     inventory.Add(harvestedPlant);
+                    harvestedPlant = CurrentRoom.HarvestPlant(0);
                 }
             }else{
                 Plant harvestedPlant = CurrentRoom.HarvestPlant(index);
@@ -75,11 +75,11 @@ namespace FinalProject
         }
 
         public void ListInventory(){
-             Console.WriteLine("  ~~~~INVENTORY~~~~");
+             Console.WriteLine(" \t   ~~~~INVENTORY~~~~");
             foreach(IItem item in inventory){
-                Console.WriteLine("| "+item.Name + "\t|");
+                Console.WriteLine("\t| "+item.Name + "   \t|");
             }
-            Console.WriteLine("______________________________");
+            Console.WriteLine("\t_________________________");
         }
 
         public void OutputMessage(string message)

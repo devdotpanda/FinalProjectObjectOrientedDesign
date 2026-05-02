@@ -60,11 +60,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/panda/Documents/repos/OOP/FinalProject/FinalProject.csproj",
+      "projectUniqueName": "/home/panda/Documents/repos/FinalProjectObjectOrientedDesign/FinalProject.csproj",
       "projectName": "FinalProject",
-      "projectPath": "/home/panda/Documents/repos/OOP/FinalProject/FinalProject.csproj",
+      "projectPath": "/home/panda/Documents/repos/FinalProjectObjectOrientedDesign/FinalProject.csproj",
       "packagesPath": "/home/panda/.nuget/packages/",
-      "outputPath": "/home/panda/Documents/repos/OOP/FinalProject/obj/",
+      "outputPath": "/home/panda/Documents/repos/FinalProjectObjectOrientedDesign/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/panda/.nuget/NuGet/NuGet.Config"
@@ -112,7 +112,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/nix/store/lx3963y157dvwx4z6pkzsmyfkki1c8p3-dotnet-sdk-8.0.118/share/dotnet/sdk/8.0.118/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/nix/store/8vaq41976i5qm26p40rin7v4wy7jr5rg-dotnet-sdk-8.0.124/share/dotnet/sdk/8.0.124/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

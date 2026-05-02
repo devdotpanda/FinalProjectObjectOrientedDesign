@@ -36,6 +36,7 @@ namespace FinalProject
             if(Enum.TryParse(type, out RoomType output)){
                 roomType = output;
             }
+            this.GeneratePlants(2);
         }
 
         public List<Plant> GeneratePlants(int PlayerStat){
@@ -63,13 +64,13 @@ namespace FinalProject
 
         public Plant HarvestPlant(int index){
             Plant output = null;
-            if(index <= _plantsInRoom.Count){
-                output = _plantsInRoom[index];
-                _plantsInRoom.RemoveAt(index);
-                return output;
-            }else{
-                return output;
+            if(_plantsInRoom.Count > 0){
+                if(_plantsInRoom.Count > index){
+                    output = _plantsInRoom[index];
+                    _plantsInRoom.RemoveAt(index);
+                }
             }
+            return output;
         }
 
         public string GetExits()

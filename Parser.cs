@@ -24,22 +24,26 @@ namespace FinalProject
 
         public Command ParseCommand(string commandString)
         {
-             Command? command = null;
+            Command? command = null;
             string[] words = commandString.Split(' ');
             command = _commands.Get(words[0]);
-            command.ResetParams();
-            if(words.Length > 0) {
-                if(command != null && words.Length >= 1){
-                    for(int i = 1; i < words.Length; i++){
-                        command.add(words[i].Trim());
+            if(command != null){
+                command.ResetParams();
+                if(words.Length > 0) {
+                    if(command != null && words.Length >= 1){
+                        for(int i = 1; i < words.Length; i++){
+                            command.add(words[i].Trim());
+                        }
+                    }else{
+                        Console.WriteLine("not written to param");
                     }
                 }else{
-                    Console.WriteLine("not written to param");
+                    Console.WriteLine("No params");
                 }
             }else{
-                Console.WriteLine("No params");
+                Console.WriteLine("Please enter a valid command, type help for commands");
             }
-
+        
             return command;
         }
         
