@@ -15,15 +15,9 @@ namespace FinalProject
         }
 
         override
-        public bool Execute(Player player)
-        {
-            if (this.HasSecondWord())
-            {
-                player.WalkTo(this.SecondWord);
-            }
-            else
-            {
-                player.WarningMessage("\nGo Where?");
+        public bool Execute(Player player){
+            if(_parameters.Count > 0){
+                player.WalkTo(_parameters[0]);
             }
             return false;
         }

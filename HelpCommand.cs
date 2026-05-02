@@ -22,9 +22,9 @@ namespace FinalProject
         override
         public bool Execute(Player player)
         {
-            if (this.HasSecondWord())
+            if (_parameters.Count > 0)
             {
-                player.WarningMessage("\nI cannot help you with " + this.SecondWord);
+                player.WarningMessage("\nI cannot help you with " + _parameters[0]);
             }
             else
             {

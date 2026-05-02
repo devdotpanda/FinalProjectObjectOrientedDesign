@@ -1,0 +1,11 @@
+
+
+Add descriptions for the the help command
+help craft 
+help examine
+help inventory
+help go ...
+
+Crafting command   
+-allows the player to craft basic items anywhere
+-special items must be crafts only in specific rooms ie (Brewingstation, Mortor and Furnace )

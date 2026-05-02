@@ -14,19 +14,19 @@ namespace FinalProject
     {
         private string _name;
         public string Name { get { return _name; } set { _name = value; } }
-        private string _secondWord;
-        public string SecondWord { get { return _secondWord; } set { _secondWord = value; } }
-        //public string desc;
-
+        public List<String> _parameters;
         public Command()
         {
             this.Name = "";
-            this.SecondWord = null;
+            _parameters = new List<string>();
         }
 
-        public bool HasSecondWord()
-        {
-            return this.SecondWord != null;
+        public void add(string param){
+            _parameters.Add(param);
+        }
+
+        public void ResetParams(){
+            _parameters.Clear();
         }
 
         public abstract bool Execute(Player player);

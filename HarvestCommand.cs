@@ -9,14 +9,18 @@ namespace FinalProject{
         override
         public bool Execute(Player player) {
             try{
-                if(this.HasSecondWord()){
-                    player.Harvest(Int32.Parse(this.SecondWord));
+                if(_parameters.Count > 0){
+                    player.Harvest(Int32.Parse(_parameters[0]));
                 }else{
                     player.WarningMessage("\n Harvest what?");
                 }
                 return false;
             }catch (FormatException e){
-                player.WarningMessage("\n Please type a number");
+                if(_parameters[0] == "all"){
+                    player.Harvest(-1);
+                }else{
+                    Console.WriteLine("Please type in an number or type all to collect all plants in room");
+                }
                 return false;
             }
         }

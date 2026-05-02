@@ -18,9 +18,9 @@ namespace FinalProject
         public bool Execute(Player player)
         {
             bool answer = true;
-            if (this.HasSecondWord())
+            if (_parameters.Count > 0)
             {
-                player.WarningMessage("\nI cannot quit " + this.SecondWord);
+                player.WarningMessage("\nI cannot quit " + _parameters[0]);
                 answer = false;
             }
             return answer;

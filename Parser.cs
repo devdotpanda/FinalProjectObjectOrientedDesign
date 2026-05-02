@@ -24,35 +24,25 @@ namespace FinalProject
 
         public Command ParseCommand(string commandString)
         {
-            Command command = null;
+             Command? command = null;
             string[] words = commandString.Split(' ');
-            if (words.Length > 0)
-            {
-                command = _commands.Get(words[0]);
-                if (command != null)
-                {
-                    if (words.Length > 1)
-                    {
-                        command.SecondWord = words[1];
+            command = _commands.Get(words[0]);
+            command.ResetParams();
+            if(words.Length > 0) {
+                if(command != null && words.Length >= 1){
+                    for(int i = 1; i < words.Length; i++){
+                        command.add(words[i].Trim());
                     }
-                    else
-                    {
-                        command.SecondWord = null;
-                    }
+                }else{
+                    Console.WriteLine("not written to param");
                 }
-                else
-                {
-                    // This is debug line of code, should remove for regular execution
-                    //Console.WriteLine(">>>Did not find the command " + words[0]);
-                }
+            }else{
+                Console.WriteLine("No params");
             }
-            else
-            {
-                // This is a debug line of code
-                //Console.WriteLine("No words parsed!");
-            }
+
             return command;
         }
+        
 
         public string Description()
         {

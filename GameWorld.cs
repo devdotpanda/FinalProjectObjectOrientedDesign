@@ -21,17 +21,28 @@ namespace FinalProject{
         public Room CreateWorld()
         {   
             Room town = new Room("URBAN","in the town square.", "standing");
+            //ALCHEMY STORE EXITS
             Room alchemyStore = new Room("URBAN","your very own alchemy store");
-
-            Room forest = new Room("FOREST","the entrance to the forest, theres a beaten path that trails North. There is a fallen tree that seems to have fallen over either to old age or from a storm, it looks like its been there a while");
-            Room FfallenTree = new Room("FOREST","Its a fallen tree surrounded by overgrowth. Its quite large but it looks to have been here quite a while. It looks like a good spot for mushrooms to grow.");
+            town.SetExit("alchemyStore",alchemyStore);
+            town.SetExit("alchemyStore",alchemyStore);
+            alchemyStore.SetExit("Town",town);
+            Room frontDesk =  new Room("URBAN", "the front counter of the store! It has a cash register and a list of all of the items for sale"); 
+            frontDesk.SetExit("alchemyStore", alchemyStore);
+            Room mortor = new Room("URBAN", "A mortor and pestle used to crush and grind herbs");
+            mortor.SetExit("alchemyStore", alchemyStore);
+            Room brewingStation = new Room("URBAN", "a brewing station you can use to boil and steep plants and herbs, There is a small burner and many flasks and beakers");
+            brewingStation.SetExit("alchemyStore", alchemyStore);
+            alchemyStore.SetExit("FrontDesk", frontDesk);
+            alchemyStore.SetExit("Mortor", mortor);
+            alchemyStore.SetExit("BrewingStation", brewingStation);
             
+            Room forest = new Room("FOREST","the entrance to the forest, theres a beaten path that trails North. There is a fallen tree that seems to have fallen over either to old age or from a storm, it looks like its been there a while");
+            town.SetExit("Forest", forest);
+            Room FfallenTree = new Room("FOREST","Its a fallen tree surrounded by overgrowth. Its quite large but it looks to have been here quite a while. It looks like a good spot for mushrooms to grow.");
             FfallenTree.SetExit("Back to the trail", forest);
-
             Room FCrossRoad = new Room("FOREST","It seems the trail diverges into two paths , one goes to the left and one to the right");
             Room FRightPath = new Room("FOREST","A fallen tree is blocking the path");
             Room FLeftPath = new Room("FOREST","After a while of walking you notice you come up to a pond its of to the side of the path but the path continues on past and around the pond");
-
             FCrossRoad.SetExit("Left Path", FLeftPath);
             FCrossRoad.SetExit("Right Path ", FRightPath);
             FCrossRoad.SetExit("go back", FfallenTree);
@@ -50,14 +61,7 @@ namespace FinalProject{
             //forest.SetExit("North", );
             forest.SetExit("FallenTree", FfallenTree);
             
-
-
-            town.SetExit("Forest", forest);
-            town.SetExit("alchemyStore",alchemyStore);
-
-            alchemyStore.SetExit("Town",town);
-
-            forest.SetExit("Town",town);
+            FfallenTree.SetExit("Back to the trail", forest);
 
             return town;
         }
