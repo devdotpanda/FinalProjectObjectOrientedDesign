@@ -43,9 +43,10 @@ namespace FinalProject{
             Room FCrossRoad = new Room("FOREST","It seems the trail diverges into two paths , one goes to the left and one to the right");
             Room FRightPath = new Room("FOREST","A fallen tree is blocking the path");
             Room FLeftPath = new Room("FOREST","After a while of walking you notice you come up to a pond its of to the side of the path but the path continues on past and around the pond");
-            FCrossRoad.SetExit("Left Path", FLeftPath);
-            FCrossRoad.SetExit("Right Path ", FRightPath);
-            FCrossRoad.SetExit("go back", FfallenTree);
+            FfallenTree.SetExit("CrossRoad",FCrossRoad);
+            FCrossRoad.SetExit("Left", FLeftPath);
+            FCrossRoad.SetExit("Right", FRightPath);
+            FCrossRoad.SetExit("FallenTree", FfallenTree);
 
 
             Room Pond = new Room("POND","A large pond, you can see its populated with lots of fish and lots of shrubery");

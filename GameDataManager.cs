@@ -31,7 +31,7 @@ namespace FinalProject {
         public GameDataManager(){
             _playerStatsDir = "PlayerStats.txt";
             _playerInventoryDir = "PlayerInventory.csv";
-            _plantListDir = "ItemList.json";
+            _plantListDir = "PlantList.json";
 
             using StreamReader PlantReader = new(_plantListDir);
             var json = PlantReader.ReadToEnd();

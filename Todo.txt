@@ -9,3 +9,6 @@ help go ...
 Crafting command   
 -allows the player to craft basic items anywhere
 -special items must be crafts only in specific rooms ie (Brewingstation, Mortor and Furnace )
+
+Completed
+-added harvest all functionality
