@@ -1,6 +1,6 @@
 namespace FinalProject{
     
-    internal interface IItem{
+    public interface IItem{
         string Name{get;}
         string Desc{get;}
         //string Effect{get;}

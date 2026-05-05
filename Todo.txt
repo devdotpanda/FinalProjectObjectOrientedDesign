@@ -6,9 +6,42 @@ help examine
 help inventory
 help go ...
 
-Crafting command   
+Crafting Command   
 -allows the player to craft basic items anywhere
 -special items must be crafts only in specific rooms ie (Brewingstation, Mortor and Furnace )
 
+Sell Command 
+-Creates sell order 
+-Can only create sell order if player is in Alchemy rooms
+
+NPC Purchasing
+-Over a period of time npc's will purchase items from the player's store 
+-Weekly item : An Item that is in high demand that will sell for higher and more likely to be bought
+-Daily item : Daily high demand item
+
+Upgrades
+-Player is able to hire people to complete tasks
+    + Run the shop when the player is away
+    + Collect items
+    + Auto craft daily items from reasources
+
+Leveling
+-track exp from actions player does
+
+
+crafting recipie idea
+-Each item contains all the possible items it can be used to craft, but the player must find one other item that also
+    turns into the item they are trying to craft. 
+example
+    : 1 wild flower can craft (health potion, super health potion, strength potion, endurance potion)
+    : 1 bristle thorn can craft ( climbing potion, speed potion, jumping potion, strength potion)
+because bristel thorn can be used to create strength potion and so can wild flower, strength potion is craftable.
+-issue the player wont know what flowers/plants create what potion
+
+
+questions
+tips on crafting and storing crafting recipies and storing items
+does the json system need to be reworked
+is there a design pattern that should replace my item system. 
 Completed
 -added harvest all functionality

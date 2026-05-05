@@ -53,16 +53,16 @@ namespace FinalProject{
             Room PFishingDock = new Room("POND","A fishing dock, its well worn");
             Pond.SetExit("Fishing Dock", PFishingDock);
             Pond.SetExit("go Back" , FLeftPath);
-            PFishingDock.SetExit("go back", Pond);
+            PFishingDock.SetExit("back", Pond);
             Room DeepForest = new Room("FOREST","The trees and shrubery grow thicker around you");
-            DeepForest.SetExit("go back", FLeftPath); 
+            DeepForest.SetExit("back", FLeftPath); 
             FLeftPath.SetExit("Pond", Pond);
             FLeftPath.SetExit("Deep Forest", DeepForest);
-            FLeftPath.SetExit("go back", FCrossRoad);
+            FLeftPath.SetExit("back", FCrossRoad);
             //forest.SetExit("North", );
             forest.SetExit("FallenTree", FfallenTree);
             
-            FfallenTree.SetExit("Back to the trail", forest);
+            FfallenTree.SetExit("back", forest);
 
             return town;
         }
