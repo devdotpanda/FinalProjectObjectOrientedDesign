@@ -37,7 +37,6 @@ namespace FinalProject
                 ErrorMessage("\nThere is no door on " + direction);
             }
         }
-
         public void ExamineRoom(){
             List<Plant> generatedPlants = CurrentRoom.GeneratePlants(2);
             if(generatedPlants != null){

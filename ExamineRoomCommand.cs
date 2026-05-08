@@ -13,8 +13,13 @@ namespace FinalProject{
         public bool Execute(Player player){
             player.ExamineRoom();
 
-            CommandList.Push(this);
+            CommandHistory.Push(this);
             return false;
+        }
+
+        override
+        public void Undo(Player player){
+            this.Execute(player);
         }
     }
 }

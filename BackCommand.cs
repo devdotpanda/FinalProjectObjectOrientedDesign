@@ -8,15 +8,22 @@ namespace FinalProject{
         
         override
         public bool Execute(Player player){
-            Command lastCommand = CommandHistory.Pop();
-            lastCommand.Undo();
+            if(CommandHistory.Count > 1){
+                
+                Command lastCommand = CommandHistory.Pop();
+                Console.WriteLine("Command History count : " + CommandHistory.Count);
+                Console.WriteLine(lastCommand.Name + " : " + lastCommand._parameters[0]);
+                lastCommand.Undo(player);
+            }else{
+               player.WarningMessage("Cant go Back");
+            }
             return false;
+            
         }
 
-        override
-        public bool Undo(){
 
-            return false;
+        override 
+        public void Undo(Player player){
         }
     }
 }

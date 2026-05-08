@@ -27,7 +27,7 @@ namespace FinalProject
         }
 
         override
-        public bool Undo() { return false;}
+        public void Undo( Player player ) { }
 
     
     }

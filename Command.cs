@@ -20,7 +20,7 @@ namespace FinalProject
         public Command()
         {
             this.Name = "";
-            CommandList = new Stack<Command>();
+            CommandHistory = new Stack<Command>();
             _parameters = new List<string>();
         }
 
@@ -29,10 +29,10 @@ namespace FinalProject
         }
 
         public void ResetParams(){
-            _parameters.Clear();
+            _parameters.Clear(); 
         }
 
         public abstract bool Execute(Player player);
-        public abstract bool Undo();
+        public abstract void Undo(Player player);
     }
 }

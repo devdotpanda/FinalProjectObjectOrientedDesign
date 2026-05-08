@@ -10,5 +10,8 @@ namespace FinalProject{
             player.ListInventory();
             return false;
         }
+
+        override 
+        public void Undo(Player player){ }
     }
 }
