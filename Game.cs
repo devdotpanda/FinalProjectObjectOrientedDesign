@@ -15,6 +15,7 @@ namespace FinalProject
         private Parser _parser;
         private bool _playing;
         private GameDataManager gameData;
+        private NotificationCenter notificationCenter;
 
         public Game()
         {

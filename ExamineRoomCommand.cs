@@ -12,6 +12,8 @@ namespace FinalProject{
         override
         public bool Execute(Player player){
             player.ExamineRoom();
+
+            CommandList.Push(this);
             return false;
         }
     }

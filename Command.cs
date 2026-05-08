@@ -15,9 +15,12 @@ namespace FinalProject
         private string _name;
         public string Name { get { return _name; } set { _name = value; } }
         public List<String> _parameters;
+        protected static Stack<Command> CommandHistory;
+        
         public Command()
         {
             this.Name = "";
+            CommandList = new Stack<Command>();
             _parameters = new List<string>();
         }
 
@@ -30,5 +33,6 @@ namespace FinalProject
         }
 
         public abstract bool Execute(Player player);
+        public abstract bool Undo();
     }
 }

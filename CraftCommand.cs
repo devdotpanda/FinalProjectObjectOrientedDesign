@@ -8,6 +8,12 @@ namespace FinalProject{
         override
         public bool Execute(Player player){
             
+            CommandList.Push(this);
+            return false;
+        }
+
+        override 
+        publuc bool Undo(){
             return false;
         }
     }

@@ -19,6 +19,7 @@ namespace FinalProject
             if(_parameters.Count > 0){
                 player.WalkTo(_parameters[0]);
             }
+            CommandList.Push(this);
             return false;
         }
     }

@@ -60,6 +60,7 @@ namespace FinalProject{
             FLeftPath.SetExit("Deep Forest", DeepForest);
             FLeftPath.SetExit("back", FCrossRoad);
             //forest.SetExit("North", );
+            forest.SetExit("town", town);
             forest.SetExit("FallenTree", FfallenTree);
             
             FfallenTree.SetExit("back", forest);

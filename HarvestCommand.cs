@@ -11,6 +11,7 @@ namespace FinalProject{
             try{
                 if(_parameters.Count > 0){
                     player.Harvest(Int32.Parse(_parameters[0]));
+                    CommandList.Push(this);
                 }else{
                     player.WarningMessage("\n Harvest what?");
                 }
@@ -18,6 +19,7 @@ namespace FinalProject{
             }catch (FormatException e){
                 if(_parameters[0] == "all"){
                     player.Harvest(-1);
+                    CommandList.Push(this);
                 }else{
                     Console.WriteLine("Please type in an number or type all to collect all plants in room");
                 }
